@@ -108,30 +108,3 @@ video {
     border-radius: 10px;
     cursor: pointer;
 }
-
-#privacyNotice {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #f0fff4;
-    border: 1px solid #b2dfdb;
-    border-radius: 10px;
-    padding: 10px 15px;
-    margin-top: 20px;
-    font-size: 0.85rem;
-    color: #555;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0;
-    transition: opacity 0.8s ease;
-    pointer-events: none;
-}
-
-#privacyNotice span {
-    font-size: 1.2rem;
-}
-
-#privacyNotice p {
-    margin: 0;
-}
