@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photobooth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="landingPage">
+        <div class="landing-content">
+            <h1>📸 photobooth</h1>
+            <p>Free Online Anytime, Anywhere ✨</p>
+            <button onclick="startApp()">START</button>
+        </div>
+    </div>
+
+    <div class="container" id="mainApp" style="display:App"></div>
+    <div class="container">
+        <h1> PhotoBooth 💗</h1>
+        <div class="main">
+            <!--KAMERA-->
+            <div class="camera-box">
+                <video id="video" autoplay></video>
+                <h2 id="countdown"></h2>
+
+                <div class="controls">
+                    <button onclick="startCamera()">Start</button>
+                    <button onclick="stopCamera()">Stop</button>
+                    <button onclick="startPhotobooth()">Capture</button>
+                    <button onclick="generateStrip()">Generate</button>
+                    <button onclick="resetPhotobooth()">Reset</button>
+                </div>
+                <div class="frame-select">
+                    <p>Pilih Frame</p>
+                    <button onclick="setTheme('white')">White</button>
+                    <button onclick="setTheme('pink')">Pink</button>
+                    <button onclick="setTheme('black')">Black</button>
+                </div>
+            </div>
+            <!--PREVIEW-->
+            <div id="preview" class="preview-box"></div>
+
+        </div>
+
+        <br>
+        
+        <img id="result">
+
+        <br>
+        <a id="downloadLink" download="photostrip.png">
+            <button class="download">Download</button>
+        </a>
+    </div>
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
