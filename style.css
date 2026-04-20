@@ -68,6 +68,10 @@ video {
     border-radius: 15px;
 }
 
+#video {
+    transform: scaleX(-1);
+}
+
 .controls button {
     margin: 5px;
     padding: 10px 15px;
