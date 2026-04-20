@@ -61,7 +61,11 @@ function capturePhoto() {
     canvas.width = width;
     canvas.height = height;
 
-    context.drawImage(video, 0, 0, width, height);
+    ctx.save();
+    ctx.translate(canvas.width, 0);
+    ctx.scale(-1, 1);
+    ctx.drawImage(video, 0, 0, width, height);
+    ctx.restore();
 
     const imageData = canvas.toDataURL("image/png");
     photo.src = imageData;
@@ -116,7 +120,11 @@ function captureToArray() {
     const context = canvas.getContext("2d");
     canvas.width = width;
     canvas.height = height;
-    context.drawImage(video, 0, 0, width, height);
+    ctx.save();
+    ctx.translate(canvas.width, 0);
+    ctx.scale(-1, 1);
+    ctx.drawImage(video, 0, 0, width, height);
+    ctx.restore();
     const imageData = canvas.toDataURL("image/png");
     photos.push(imageData);
 }
