@@ -1,6 +1,12 @@
 function startApp() {
     document.getElementById("landingPage").style.display = "none";
     document.getElementById("mainApp").style.display = "block";
+
+    const notice = document.getElementById("privacyNotice");
+    notice.style.display = "flex";
+    setTimeout(() => {
+        notice.style.opacity = "1";
+    }, 100);
 }
 
 const video = document.getElementById("video");
