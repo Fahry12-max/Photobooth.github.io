@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: linear-gradient(to right, #ffd6e7, #ffeaf4);
+    text-align: center;
+}
+
+#landingPage {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #ffd6e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.landing-content {
+    text-align: center;
+}
+
+.landing-content h1 {
+    font-size: 3rem;
+    color: #e75480;
+    margin-bottom: 10px;
+}
+
+.landing-content p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.landing-content button {
+    padding: 15px 50px;
+    font-size: 1.2rem;
+    background-color: #e75480;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    color: #ff4d8d;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.camera-box {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+video {
+    width: 300px;
+    border-radius: 15px;
+}
+
+.controls button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background: #ff4d8d;
+    color: white;
+    cursor: pointer;
+}
+
+.preview-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.preview-box img {
+    width: 100px;
+    border-radius: 10px;
+}
+
+.frame-select button {
+    margin: 5px;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.download {
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
