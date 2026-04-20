@@ -1,6 +1,7 @@
 function startApp() {
     document.getElementById("landingPage").style.display = "none";
     document.getElementById("mainApp").style.display = "block";
+    alert("Foto kamu hanya diproses di browser ini dantidak disimpan di server manapun.")
 }
 
 const video = document.getElementById("video");
