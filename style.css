@@ -125,6 +125,7 @@ video {
     margin-right: auto;
     opacity: 0;
     transition: opacity 0.8s ease;
+    pointer-events: none;
 }
 
 #privacyNotice span {
