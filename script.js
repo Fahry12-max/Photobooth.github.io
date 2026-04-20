@@ -48,7 +48,7 @@ function capturePhoto() {
         return;
     }
 
-    const context = canvas.getContext("2d")
+    const ctx = canvas.getContext("2d")
 
     const width = video.videoWidth;
     const height = video.videoHeight;
@@ -117,7 +117,7 @@ function captureToArray() {
         alert("Kamera bellum siap nihh! ");
         return;
     }
-    const context = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d");
     canvas.width = width;
     canvas.height = height;
     ctx.save();
@@ -191,16 +191,6 @@ async function generateStrip() {
             img,
             padding,
             headerHeight + padding + index * (imgHeight + padding),
-            imgWidth,
-            imgHeight
-        );
-    });
-
-    imgElements.forEach((img, index) => {
-        ctx.drawImage(
-            img,
-            padding,
-            padding + index * (imgHeight + padding),
             imgWidth,
             imgHeight
         );
