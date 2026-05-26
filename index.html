@@ -7,52 +7,113 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- LANDING PAGE -->
     <div id="landingPage">
-        <div class="landing-content">
-            <h1>📸 photobooth</h1>
-            <p>Free Online Anytime, Anywhere ✨</p>
-            <button onclick="startApp()">START</button>
-        </div>
+          <span class="landing-deco">🌸</span>
+          <span class="landing-deco">✨</span>
+          <span class="landing-deco">🌷</span>
+          <span class="landing-deco">💫</span>
+          <span class="landing-deco">🌺</span>
+          <span class="landing-deco">⭐</span>
+
+    <div class="landing-card">
+        <h1>photobooth</h1>
+        <p class="sub">Free · Online · Anytime ✨</p>
+        <button class="btn-start" onclick="startApp()">Start Session</button>
+    </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="mainApp">
+    <div class="app-header">
+        <h1>photobooth 💗</h1>
+        <p>click capture · wait for countdown · download your strip</p>
     </div>
 
-    <div class="container" id="mainApp" style="display:App"></div>
-    <div class="container">
-        <h1> PhotoBooth 💗</h1>
-        <div class="main">
-            <!--KAMERA-->
-            <div class="camera-box">
-                <video id="video" autoplay></video>
-                <h2 id="countdown"></h2>
+    <div class="main-grid">
 
-                <div class="controls">
-                    <button onclick="startCamera()">Start</button>
-                    <button onclick="stopCamera()">Stop</button>
-                    <button onclick="startPhotobooth()">Capture</button>
-                    <button onclick="generateStrip()">Generate</button>
-                    <button onclick="resetPhotobooth()">Reset</button>
+        <!-- LEFT: CAMERA -->
+        <div class="camera-panel">
+
+            <div class="video-wrapper">
+                <div class="camera-notice" id="cameraNotice">
+                    <span>📷</span>
+                    <p>Click Start to activate camera</p>
                 </div>
-                <div class="frame-select">
-                    <p>Pilih Frame</p>
-                    <button onclick="setTheme('white')">White</button>
-                    <button onclick="setTheme('pink')">Pink</button>
-                    <button onclick="setTheme('black')">Black</button>
+                <video id="video" autoplay style="display:none;" class="f-normal"></video>
+                <h2 id="countdown"></h2>
+            </div>
+
+            <!-- Camera Settings -->
+            <div class="cam-settings">
+                <label>Filter</label>
+                <div class="filter-btns">
+                    <button class="filter-btn active" onclick="setFilter('f-normal', this)">Normal</button>
+                    <button class="filter-btn" onclick="setFilter('f-vivid', this)">Vivid</button>
+                    <button class="filter-btn" onclick="setFilter('f-soft', this)">Soft</button>
+                    <button class="filter-btn" onclick="setFilter('f-warm', this)">Warm</button>
+                    <button class="filter-btn" onclick="setFilter('f-cool', this)">Cool</button>
+                    <button class="filter-btn" onclick="setFilter('f-mono', this)">Mono</button>
+                </div>
+                <button class="flip-toggle" onclick="toggleFlip()">🔄 Flip</button>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-secondary" onclick="startCamera()">▶ Start</button>
+                <button class="btn btn-ghost" onclick="stopCamera()">■ Stop</button>
+                <button class="btn btn-primary" onclick="startPhotobooth()" id="captureBtn" disabled>📸 Capture (4 Photos)</button>
+                <button class="btn btn-secondary" onclick="generateStrip()" id="generateBtn" disabled>🎞 Generate Strip</button>
+                <button class="btn btn-ghost" onclick="resetPhotobooth()">↺ Reset</button>
+            </div>
+
+            <!-- Frame Picker -->
+            <p class="section-label">Frame Style</p>
+            <div class="frame-grid">
+                <button class="frame-btn active" data-theme="white" onclick="setTheme('white', this)">🤍 White</button>
+                <button class="frame-btn" data-theme="pink" onclick="setTheme('pink', this)">🌸 Pink</button>
+                <button class="frame-btn" data-theme="black" onclick="setTheme('black', this)">🖤 Black</button>
+                <button class="frame-btn" data-theme="cream" onclick="setTheme('cream', this)">🧡 Cream</button>
+                <button class="frame-btn" data-theme="mint" onclick="setTheme('mint', this)">🌿 Mint</button>
+                <button class="frame-btn" data-theme="purple" onclick="setTheme('purple', this)">💜 Purple</button>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="right-panel">
+
+            <!-- Preview -->
+            <div class="preview-panel">
+                <p class="section-label">Preview shots</p>
+                <div class="preview-grid" id="previewGrid">
+                    <div class="preview-slot"><span class="slot-num">1</span></div>
+                    <div class="preview-slot"><span class="slot-num">2</span></div>
+                    <div class="preview-slot"><span class="slot-num">3</span></div>
+                    <div class="preview-slot"><span class="slot-num">4</span></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
                 </div>
             </div>
-            <!--PREVIEW-->
-            <div id="preview" class="preview-box"></div>
+
+            <!-- Result -->
+            <div class="result-panel">
+                <p class="section-label">Your photostrip</p>
+                <div class="empty-strip" id="emptyStrip">
+                    <span>🎞</span>
+                    Capture 4 photos then click Generate
+                </div>
+                <img id="result" alt="photostrip">
+                <a id="downloadLink" download="photostrip.png">
+                    <button class="download-btn" id="downloadBtn">⬇ Download Strip</button>
+                </a>
+            </div>
 
         </div>
-
-        <br>
-        
-        <img id="result">
-
-        <br>
-        <a id="downloadLink" download="photostrip.png">
-            <button class="download">Download</button>
-        </a>
     </div>
-    <canvas id="canvas" style="display:none;"></canvas>
+</div>
+
+<canvas id="canvas"></canvas>
+<div id="toast"></div>
 
     <script src="script.js"></script>
     <script>   
